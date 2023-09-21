@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Users {
+namespace Qwips.Core.ClientSdk.Multicase.Users {
     /// <summary>
     /// Builds and executes requests for operations under \users
     /// </summary>
@@ -36,7 +36,7 @@ namespace Qwips.Core.MultiCase.Users {
         public async Task<List<Userslistdata>> GetAsync(Action<UsersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Userslistdata>(requestInfo, Userslistdata.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Userslistdata>(requestInfo, Userslistdata.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Product.Price.Item;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Product.Price.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Product.Price {
+namespace Qwips.Core.ClientSdk.Multicase.Product.Price {
     /// <summary>
     /// Builds and executes requests for operations under \product\price
     /// </summary>
     public class PriceRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.product.price.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.product.price.item collection</summary>
         public WithProductItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("ProductId", position);
@@ -51,7 +51,7 @@ namespace Qwips.Core.MultiCase.Product.Price {
             try
             {
 
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Productprice1>(requestInfo, Productprice1.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Productprice1>(requestInfo, Productprice1.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
             }
             catch (Exception e)

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Qwips.Core.MultiCase
+namespace Qwips.Core.ClientSdk.Multicase
 {
     public class BasicAuthorizationProvider : IAuthenticationProvider
     {

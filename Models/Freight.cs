@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Freight : IAdditionalDataHolder, IParsable {
         /// <summary>The Active property</summary>
         public bool? Active { get; set; }
@@ -26,10 +26,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Country? Country { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Country? Country { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Country Country { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Country Country { get; set; }
 #endif
         /// <summary>The DefaultButikkFrakt property</summary>
         public bool? DefaultButikkFrakt { get; set; }
@@ -158,7 +158,7 @@ namespace Qwips.Core.MultiCase.Models {
                 {"AvgiftID", n => { AvgiftID = n.GetIntValue(); } },
                 {"BelastMottaker", n => { BelastMottaker = n.GetBoolValue(); } },
                 {"BrukWinEDI", n => { BrukWinEDI = n.GetBoolValue(); } },
-                {"Country", n => { Country = n.GetObjectValue<Qwips.Core.MultiCase.Models.Country>(Qwips.Core.MultiCase.Models.Country.CreateFromDiscriminatorValue); } },
+                {"Country", n => { Country = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Country>(Qwips.Core.ClientSdk.Multicase.Models.Country.CreateFromDiscriminatorValue); } },
                 {"DefaultButikkFrakt", n => { DefaultButikkFrakt = n.GetBoolValue(); } },
                 {"DefaultProduktVekt", n => { DefaultProduktVekt = n.GetDoubleValue(); } },
                 {"DuplikatPakkSeddel", n => { DuplikatPakkSeddel = n.GetIntValue(); } },
@@ -210,7 +210,7 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteIntValue("AvgiftID", AvgiftID);
             writer.WriteBoolValue("BelastMottaker", BelastMottaker);
             writer.WriteBoolValue("BrukWinEDI", BrukWinEDI);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Country>("Country", Country);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Country>("Country", Country);
             writer.WriteBoolValue("DefaultButikkFrakt", DefaultButikkFrakt);
             writer.WriteDoubleValue("DefaultProduktVekt", DefaultProduktVekt);
             writer.WriteIntValue("DuplikatPakkSeddel", DuplikatPakkSeddel);

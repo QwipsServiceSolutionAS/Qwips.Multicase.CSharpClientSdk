@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Pricegroup : IAdditionalDataHolder, IParsable {
         /// <summary>The Active property</summary>
         public bool? Active { get; set; }

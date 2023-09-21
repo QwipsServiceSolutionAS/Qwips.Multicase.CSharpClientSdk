@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Customers.Item.Contacts.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Customers.Item.Contacts.Item {
     /// <summary>
     /// Builds and executes requests for operations under \customers\{CustomerId}\contacts\{ContactId}
     /// </summary>
@@ -41,7 +41,7 @@ namespace Qwips.Core.MultiCase.Customers.Item.Contacts.Item {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<WithContactResponse>(requestInfo, WithContactResponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WithContactResponse>(requestInfo, WithContactResponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Update one contact for give customer and contact Ids

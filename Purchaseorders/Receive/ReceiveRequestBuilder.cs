@@ -1,12 +1,12 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Purchaseorders.Receive.Full;
-using Qwips.Core.MultiCase.Purchaseorders.Receive.Partly;
+using Qwips.Core.ClientSdk.Multicase.Purchaseorders.Receive.Full;
+using Qwips.Core.ClientSdk.Multicase.Purchaseorders.Receive.Partly;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Purchaseorders.Receive {
+namespace Qwips.Core.ClientSdk.Multicase.Purchaseorders.Receive {
     /// <summary>
     /// Builds and executes requests for operations under \purchaseorders\receive
     /// </summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Warehouses.Item.Stocklevels;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Warehouses.Item.Stocklevels;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Warehouses.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Warehouses.Item {
     /// <summary>
     /// Builds and executes requests for operations under \warehouses\{WarehouseId}
     /// </summary>
@@ -44,7 +44,7 @@ namespace Qwips.Core.MultiCase.Warehouses.Item {
         public async Task<List<Warehouseresponse>> GetAsync(Action<WithWarehouseItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Warehouseresponse>(requestInfo, Warehouseresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Warehouseresponse>(requestInfo, Warehouseresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <summary>

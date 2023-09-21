@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Customerproduct : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The CustomerGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Customergroups? CustomerGroups { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customergroups? CustomerGroups { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Customergroups CustomerGroups { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customergroups CustomerGroups { get; set; }
 #endif
         /// <summary>The CustomersAdd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Customersadd? CustomersAdd { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customersadd? CustomersAdd { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Customersadd CustomersAdd { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customersadd CustomersAdd { get; set; }
 #endif
         /// <summary>The CustomersDelete property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Customersdelete? CustomersDelete { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customersdelete? CustomersDelete { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Customersdelete CustomersDelete { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customersdelete CustomersDelete { get; set; }
 #endif
         /// <summary>The Product property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,9 +58,9 @@ namespace Qwips.Core.MultiCase.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"CustomerGroups", n => { CustomerGroups = n.GetObjectValue<Qwips.Core.MultiCase.Models.Customergroups>(Qwips.Core.MultiCase.Models.Customergroups.CreateFromDiscriminatorValue); } },
-                {"CustomersAdd", n => { CustomersAdd = n.GetObjectValue<Qwips.Core.MultiCase.Models.Customersadd>(Qwips.Core.MultiCase.Models.Customersadd.CreateFromDiscriminatorValue); } },
-                {"CustomersDelete", n => { CustomersDelete = n.GetObjectValue<Qwips.Core.MultiCase.Models.Customersdelete>(Qwips.Core.MultiCase.Models.Customersdelete.CreateFromDiscriminatorValue); } },
+                {"CustomerGroups", n => { CustomerGroups = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customergroups>(Qwips.Core.ClientSdk.Multicase.Models.Customergroups.CreateFromDiscriminatorValue); } },
+                {"CustomersAdd", n => { CustomersAdd = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customersadd>(Qwips.Core.ClientSdk.Multicase.Models.Customersadd.CreateFromDiscriminatorValue); } },
+                {"CustomersDelete", n => { CustomersDelete = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customersdelete>(Qwips.Core.ClientSdk.Multicase.Models.Customersdelete.CreateFromDiscriminatorValue); } },
                 {"Product", n => { Product = n.GetObjectValue<Linkproduct>(Linkproduct.CreateFromDiscriminatorValue); } },
             };
         }
@@ -70,9 +70,9 @@ namespace Qwips.Core.MultiCase.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Customergroups>("CustomerGroups", CustomerGroups);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Customersadd>("CustomersAdd", CustomersAdd);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Customersdelete>("CustomersDelete", CustomersDelete);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customergroups>("CustomerGroups", CustomerGroups);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customersadd>("CustomersAdd", CustomersAdd);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customersdelete>("CustomersDelete", CustomersDelete);
             writer.WriteObjectValue<Linkproduct>("Product", Product);
             writer.WriteAdditionalData(AdditionalData);
         }

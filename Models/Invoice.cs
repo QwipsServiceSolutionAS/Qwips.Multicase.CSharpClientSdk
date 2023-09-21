@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Invoice : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -32,10 +32,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Customer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Customer? Customer { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customer? Customer { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Customer Customer { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customer Customer { get; set; }
 #endif
         /// <summary>The DateCreated property</summary>
         public DateTimeOffset? DateCreated { get; set; }
@@ -52,10 +52,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Department property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Department? Department { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Department? Department { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Department Department { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Department Department { get; set; }
 #endif
         /// <summary>The DepartmentId property</summary>
         public int? DepartmentId { get; set; }
@@ -145,11 +145,11 @@ namespace Qwips.Core.MultiCase.Models {
                 {"Closed", n => { Closed = n.GetBoolValue(); } },
                 {"CreditorId", n => { CreditorId = n.GetIntValue(); } },
                 {"CreditorName", n => { CreditorName = n.GetStringValue(); } },
-                {"Customer", n => { Customer = n.GetObjectValue<Qwips.Core.MultiCase.Models.Customer>(Qwips.Core.MultiCase.Models.Customer.CreateFromDiscriminatorValue); } },
+                {"Customer", n => { Customer = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customer>(Qwips.Core.ClientSdk.Multicase.Models.Customer.CreateFromDiscriminatorValue); } },
                 {"DateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 {"DateInvoiced", n => { DateInvoiced = n.GetDateTimeOffsetValue(); } },
                 {"DeliveryMethod", n => { DeliveryMethod = n.GetStringValue(); } },
-                {"Department", n => { Department = n.GetObjectValue<Qwips.Core.MultiCase.Models.Department>(Qwips.Core.MultiCase.Models.Department.CreateFromDiscriminatorValue); } },
+                {"Department", n => { Department = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Department>(Qwips.Core.ClientSdk.Multicase.Models.Department.CreateFromDiscriminatorValue); } },
                 {"DepartmentId", n => { DepartmentId = n.GetIntValue(); } },
                 {"DueDate", n => { DueDate = n.GetDateTimeOffsetValue(); } },
                 {"FreightCost", n => { FreightCost = n.GetDoubleValue(); } },
@@ -180,11 +180,11 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteBoolValue("Closed", Closed);
             writer.WriteIntValue("CreditorId", CreditorId);
             writer.WriteStringValue("CreditorName", CreditorName);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Customer>("Customer", Customer);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customer>("Customer", Customer);
             writer.WriteDateTimeOffsetValue("DateCreated", DateCreated);
             writer.WriteDateTimeOffsetValue("DateInvoiced", DateInvoiced);
             writer.WriteStringValue("DeliveryMethod", DeliveryMethod);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Department>("Department", Department);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Department>("Department", Department);
             writer.WriteIntValue("DepartmentId", DepartmentId);
             writer.WriteDateTimeOffsetValue("DueDate", DueDate);
             writer.WriteDoubleValue("FreightCost", FreightCost);

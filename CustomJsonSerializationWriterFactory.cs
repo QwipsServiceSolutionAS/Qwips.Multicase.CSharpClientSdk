@@ -11,7 +11,7 @@ using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Xml;
 
-namespace Qwips.Core.MultiCase
+namespace Qwips.Core.ClientSdk.Multicase
 {
     /// <summary>
     /// Write json, include null values

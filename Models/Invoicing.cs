@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Invoicing : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -16,20 +16,20 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The MonthlyCombinedInvoicing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Monthlycombinedinvoicing? MonthlyCombinedInvoicing { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Monthlycombinedinvoicing? MonthlyCombinedInvoicing { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Monthlycombinedinvoicing MonthlyCombinedInvoicing { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Monthlycombinedinvoicing MonthlyCombinedInvoicing { get; set; }
 #endif
         /// <summary>The ScheduleType property</summary>
         public Invoicescheduletypeenum? ScheduleType { get; set; }
         /// <summary>The WeeklyCombinedInvoicing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Weeklycombinedinvoicing? WeeklyCombinedInvoicing { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Weeklycombinedinvoicing? WeeklyCombinedInvoicing { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Weeklycombinedinvoicing WeeklyCombinedInvoicing { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Weeklycombinedinvoicing WeeklyCombinedInvoicing { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new invoicing and sets the default values.
@@ -54,9 +54,9 @@ namespace Qwips.Core.MultiCase.Models {
                 {"CreditNoteFormat", n => { CreditNoteFormat = n.GetEnumValue<Invoiceformatenum>(); } },
                 {"FactoringUsed", n => { FactoringUsed = n.GetBoolValue(); } },
                 {"InvoiceFormat", n => { InvoiceFormat = n.GetEnumValue<Invoiceformatenum>(); } },
-                {"MonthlyCombinedInvoicing", n => { MonthlyCombinedInvoicing = n.GetObjectValue<Qwips.Core.MultiCase.Models.Monthlycombinedinvoicing>(Qwips.Core.MultiCase.Models.Monthlycombinedinvoicing.CreateFromDiscriminatorValue); } },
+                {"MonthlyCombinedInvoicing", n => { MonthlyCombinedInvoicing = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Monthlycombinedinvoicing>(Qwips.Core.ClientSdk.Multicase.Models.Monthlycombinedinvoicing.CreateFromDiscriminatorValue); } },
                 {"ScheduleType", n => { ScheduleType = n.GetEnumValue<Invoicescheduletypeenum>(); } },
-                {"WeeklyCombinedInvoicing", n => { WeeklyCombinedInvoicing = n.GetObjectValue<Qwips.Core.MultiCase.Models.Weeklycombinedinvoicing>(Qwips.Core.MultiCase.Models.Weeklycombinedinvoicing.CreateFromDiscriminatorValue); } },
+                {"WeeklyCombinedInvoicing", n => { WeeklyCombinedInvoicing = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Weeklycombinedinvoicing>(Qwips.Core.ClientSdk.Multicase.Models.Weeklycombinedinvoicing.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,9 +68,9 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteEnumValue<Invoiceformatenum>("CreditNoteFormat", CreditNoteFormat);
             writer.WriteBoolValue("FactoringUsed", FactoringUsed);
             writer.WriteEnumValue<Invoiceformatenum>("InvoiceFormat", InvoiceFormat);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Monthlycombinedinvoicing>("MonthlyCombinedInvoicing", MonthlyCombinedInvoicing);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Monthlycombinedinvoicing>("MonthlyCombinedInvoicing", MonthlyCombinedInvoicing);
             writer.WriteEnumValue<Invoicescheduletypeenum>("ScheduleType", ScheduleType);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Weeklycombinedinvoicing>("WeeklyCombinedInvoicing", WeeklyCombinedInvoicing);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Weeklycombinedinvoicing>("WeeklyCombinedInvoicing", WeeklyCombinedInvoicing);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

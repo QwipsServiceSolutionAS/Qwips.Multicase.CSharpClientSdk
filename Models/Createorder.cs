@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Createorder : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Address? Address { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Address? Address { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Address Address { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Address Address { get; set; }
 #endif
         /// <summary>The CardPayment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Cardpayment? CardPayment { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Cardpayment? CardPayment { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Cardpayment CardPayment { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Cardpayment CardPayment { get; set; }
 #endif
         /// <summary>The ContactID property</summary>
         public int? ContactID { get; set; }
@@ -147,8 +147,8 @@ namespace Qwips.Core.MultiCase.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Address", n => { Address = n.GetObjectValue<Qwips.Core.MultiCase.Models.Address>(Qwips.Core.MultiCase.Models.Address.CreateFromDiscriminatorValue); } },
-                {"CardPayment", n => { CardPayment = n.GetObjectValue<Qwips.Core.MultiCase.Models.Cardpayment>(Qwips.Core.MultiCase.Models.Cardpayment.CreateFromDiscriminatorValue); } },
+                {"Address", n => { Address = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Address>(Qwips.Core.ClientSdk.Multicase.Models.Address.CreateFromDiscriminatorValue); } },
+                {"CardPayment", n => { CardPayment = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Cardpayment>(Qwips.Core.ClientSdk.Multicase.Models.Cardpayment.CreateFromDiscriminatorValue); } },
                 {"ContactID", n => { ContactID = n.GetIntValue(); } },
                 {"CurrencyID", n => { CurrencyID = n.GetIntValue(); } },
                 {"CustomerEAN", n => { CustomerEAN = n.GetStringValue(); } },
@@ -182,8 +182,8 @@ namespace Qwips.Core.MultiCase.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Address>("Address", Address);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Cardpayment>("CardPayment", CardPayment);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Address>("Address", Address);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Cardpayment>("CardPayment", CardPayment);
             writer.WriteIntValue("ContactID", ContactID);
             writer.WriteIntValue("CurrencyID", CurrencyID);
             writer.WriteStringValue("CustomerEAN", CustomerEAN);

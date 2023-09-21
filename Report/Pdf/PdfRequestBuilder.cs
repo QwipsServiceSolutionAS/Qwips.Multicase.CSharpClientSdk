@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Report.Pdf {
+namespace Qwips.Core.ClientSdk.Multicase.Report.Pdf {
     /// <summary>
     /// Builds and executes requests for operations under \report\pdf
     /// </summary>
@@ -34,14 +34,14 @@ namespace Qwips.Core.MultiCase.Report.Pdf {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Qwips.Core.MultiCase.Models.Report?> PostAsync(Getpfdreportviapost body, Action<PdfRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Qwips.Core.ClientSdk.Multicase.Models.Report?> PostAsync(Getpfdreportviapost body, Action<PdfRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Qwips.Core.MultiCase.Models.Report> PostAsync(Getpfdreportviapost body, Action<PdfRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Qwips.Core.ClientSdk.Multicase.Models.Report> PostAsync(Getpfdreportviapost body, Action<PdfRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<Qwips.Core.MultiCase.Models.Report>(requestInfo, Qwips.Core.MultiCase.Models.Report.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Qwips.Core.ClientSdk.Multicase.Models.Report>(requestInfo, Qwips.Core.ClientSdk.Multicase.Models.Report.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Retrieve a PDF report by sending in desired report format, Report and Control parameters as JSON with the POST

@@ -1,19 +1,18 @@
-using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Products.Search.Item;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Threading;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Products.Search.Item;
 using System;
-namespace Qwips.Core.MultiCase.Products.Search {
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Qwips.Core.ClientSdk.Multicase.Products.Search
+{
     /// <summary>
     /// Builds and executes requests for operations under \products\search
     /// </summary>
     public class SearchRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.products.search.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.products.search.item collection</summary>
         public WithProductNrItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("ProductNr", position);
@@ -46,7 +45,7 @@ namespace Qwips.Core.MultiCase.Products.Search {
         public async Task<Productslist> GetAsync(Action<SearchRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Productslist>(requestInfo, Productslist.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Productslist>(requestInfo, Productslist.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Search products by description (in any language), EAN or EAN text

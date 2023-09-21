@@ -1,12 +1,12 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Report.Multicasereport;
-using Qwips.Core.MultiCase.Report.Pdf;
+using Qwips.Core.ClientSdk.Multicase.Report.Multicasereport;
+using Qwips.Core.ClientSdk.Multicase.Report.Pdf;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Report {
+namespace Qwips.Core.ClientSdk.Multicase.Report {
     /// <summary>
     /// Builds and executes requests for operations under \report
     /// </summary>

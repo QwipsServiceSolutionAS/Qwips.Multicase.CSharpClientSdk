@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.MSystem.Economy;
-using Qwips.Core.MultiCase.MSystem.Usercompany;
-using Qwips.Core.MultiCase.MSystem.Warehouse;
+using Qwips.Core.ClientSdk.Multicase.MSystem.Economy;
+using Qwips.Core.ClientSdk.Multicase.MSystem.Usercompany;
+using Qwips.Core.ClientSdk.Multicase.MSystem.Warehouse;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.MSystem {
+namespace Qwips.Core.ClientSdk.Multicase.MSystem {
     /// <summary>
     /// Builds and executes requests for operations under \system
     /// </summary>

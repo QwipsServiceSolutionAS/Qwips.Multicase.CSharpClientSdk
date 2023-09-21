@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Orders.Orders.Item;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Orders.Orders.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Orders.Orders {
+namespace Qwips.Core.ClientSdk.Multicase.Orders.Orders {
     /// <summary>
     /// Builds and executes requests for operations under \orders\orders
     /// </summary>
     public class OrdersRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.orders.orders.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.orders.orders.item collection</summary>
         public WithCustomerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("CustomerID", position);
@@ -45,7 +45,7 @@ namespace Qwips.Core.MultiCase.Orders.Orders {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<Orderslist>(requestInfo, Orderslist.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Orderslist>(requestInfo, Orderslist.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

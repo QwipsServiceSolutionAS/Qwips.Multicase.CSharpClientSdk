@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Products.Item.Stocklevels.Item;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Products.Item.Stocklevels.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Products.Item.Stocklevels {
+namespace Qwips.Core.ClientSdk.Multicase.Products.Item.Stocklevels {
     /// <summary>
     /// Builds and executes requests for operations under \products\{Id}\stocklevels
     /// </summary>
     public class StocklevelsRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.products.item.stocklevels.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.products.item.stocklevels.item collection</summary>
         public WithWarehouseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("WarehouseId", position);
@@ -46,7 +46,7 @@ namespace Qwips.Core.MultiCase.Products.Item.Stocklevels {
         public async Task<List<Productstocklevel>> GetAsync(Action<StocklevelsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Productstocklevel>(requestInfo, Productstocklevel.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Productstocklevel>(requestInfo, Productstocklevel.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <summary>

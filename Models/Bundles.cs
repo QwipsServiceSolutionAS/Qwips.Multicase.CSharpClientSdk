@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Bundles : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Bundle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Qwips.Core.MultiCase.Models.Bundle>? Bundle { get; set; }
+        public List<Qwips.Core.ClientSdk.Multicase.Models.Bundle>? Bundle { get; set; }
 #nullable restore
 #else
-        public List<Qwips.Core.MultiCase.Models.Bundle> Bundle { get; set; }
+        public List<Qwips.Core.ClientSdk.Multicase.Models.Bundle> Bundle { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new Bundles and sets the default values.
@@ -34,7 +34,7 @@ namespace Qwips.Core.MultiCase.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Bundle", n => { Bundle = n.GetCollectionOfObjectValues<Qwips.Core.MultiCase.Models.Bundle>(Qwips.Core.MultiCase.Models.Bundle.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"Bundle", n => { Bundle = n.GetCollectionOfObjectValues<Qwips.Core.ClientSdk.Multicase.Models.Bundle>(Qwips.Core.ClientSdk.Multicase.Models.Bundle.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Qwips.Core.MultiCase.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Qwips.Core.MultiCase.Models.Bundle>("Bundle", Bundle);
+            writer.WriteCollectionOfObjectValues<Qwips.Core.ClientSdk.Multicase.Models.Bundle>("Bundle", Bundle);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

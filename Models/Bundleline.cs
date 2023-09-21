@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Bundleline : IAdditionalDataHolder, IParsable {
         /// <summary>The AccountNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,10 +28,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Customer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Customer? Customer { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customer? Customer { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Customer Customer { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Customer Customer { get; set; }
 #endif
         /// <summary>The Date property</summary>
         public DateTimeOffset? Date { get; set; }
@@ -117,7 +117,7 @@ namespace Qwips.Core.MultiCase.Models {
                 {"AccountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 {"BundleLineId", n => { BundleLineId = n.GetIntValue(); } },
                 {"CurrencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                {"Customer", n => { Customer = n.GetObjectValue<Qwips.Core.MultiCase.Models.Customer>(Qwips.Core.MultiCase.Models.Customer.CreateFromDiscriminatorValue); } },
+                {"Customer", n => { Customer = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customer>(Qwips.Core.ClientSdk.Multicase.Models.Customer.CreateFromDiscriminatorValue); } },
                 {"Date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 {"DebitAmount", n => { DebitAmount = n.GetDoubleValue(); } },
                 {"DepartmentCode", n => { DepartmentCode = n.GetStringValue(); } },
@@ -145,7 +145,7 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteStringValue("AccountNumber", AccountNumber);
             writer.WriteIntValue("BundleLineId", BundleLineId);
             writer.WriteStringValue("CurrencyCode", CurrencyCode);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Customer>("Customer", Customer);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Customer>("Customer", Customer);
             writer.WriteDateTimeOffsetValue("Date", Date);
             writer.WriteDoubleValue("DebitAmount", DebitAmount);
             writer.WriteStringValue("DepartmentCode", DepartmentCode);

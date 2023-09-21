@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Products.Item.Images;
-using Qwips.Core.MultiCase.Products.Item.Listprice;
-using Qwips.Core.MultiCase.Products.Item.Stocklevels;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Products.Item.Images;
+using Qwips.Core.ClientSdk.Multicase.Products.Item.Listprice;
+using Qwips.Core.ClientSdk.Multicase.Products.Item.Stocklevels;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Products.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Products.Item {
     /// <summary>
     /// Builds and executes requests for operations under \products\{Id}
     /// </summary>
@@ -54,7 +54,7 @@ namespace Qwips.Core.MultiCase.Products.Item {
         public async Task<Productslist> GetAsync(Action<ProductsItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Productslist>(requestInfo, Productslist.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Productslist>(requestInfo, Productslist.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Get product(s) by id

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Products.Item.Stocklevels.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Products.Item.Stocklevels.Item {
     /// <summary>
     /// Builds and executes requests for operations under \products\{ProductId}\stocklevels\{WarehouseId}
     /// </summary>
@@ -39,7 +39,7 @@ namespace Qwips.Core.MultiCase.Products.Item.Stocklevels.Item {
         public async Task<List<Productstocklevel>> GetAsync(Action<WithWarehouseItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Productstocklevel>(requestInfo, Productstocklevel.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Productstocklevel>(requestInfo, Productstocklevel.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <summary>

@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Orders.Orderstatus.Item;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Orders.Orderstatus.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Orders.Orderstatus {
+namespace Qwips.Core.ClientSdk.Multicase.Orders.Orderstatus {
     /// <summary>
     /// Builds and executes requests for operations under \orders\orderstatus
     /// </summary>
     public class OrderstatusRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.orders.orderstatus.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.orders.orderstatus.item collection</summary>
         public WithNumbersItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Numbers", position);
@@ -43,7 +43,7 @@ namespace Qwips.Core.MultiCase.Orders.Orderstatus {
         public async Task<Ordersstatusresponse> GetAsync(Action<OrderstatusRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Ordersstatusresponse>(requestInfo, Ordersstatusresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Ordersstatusresponse>(requestInfo, Ordersstatusresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

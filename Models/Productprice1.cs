@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Productprice1 : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -14,18 +14,18 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The PriceExVat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Amount? PriceExVat { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Amount? PriceExVat { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Amount PriceExVat { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Amount PriceExVat { get; set; }
 #endif
         /// <summary>The PriceIncVat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Amount? PriceIncVat { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Amount? PriceIncVat { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Amount PriceIncVat { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Amount PriceIncVat { get; set; }
 #endif
         /// <summary>The ProductId property</summary>
         public int? ProductId { get; set; }
@@ -54,8 +54,8 @@ namespace Qwips.Core.MultiCase.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"Amount", n => { Amount = n.GetDoubleValue(); } },
                 {"CustomerId", n => { CustomerId = n.GetIntValue(); } },
-                {"PriceExVat", n => { PriceExVat = n.GetObjectValue<Qwips.Core.MultiCase.Models.Amount>(Qwips.Core.MultiCase.Models.Amount.CreateFromDiscriminatorValue); } },
-                {"PriceIncVat", n => { PriceIncVat = n.GetObjectValue<Qwips.Core.MultiCase.Models.Amount>(Qwips.Core.MultiCase.Models.Amount.CreateFromDiscriminatorValue); } },
+                {"PriceExVat", n => { PriceExVat = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Amount>(Qwips.Core.ClientSdk.Multicase.Models.Amount.CreateFromDiscriminatorValue); } },
+                {"PriceIncVat", n => { PriceIncVat = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Amount>(Qwips.Core.ClientSdk.Multicase.Models.Amount.CreateFromDiscriminatorValue); } },
                 {"ProductId", n => { ProductId = n.GetIntValue(); } },
                 {"ProductWarehouseId", n => { ProductWarehouseId = n.GetIntValue(); } },
                 {"WarehouseId", n => { WarehouseId = n.GetIntValue(); } },
@@ -69,8 +69,8 @@ namespace Qwips.Core.MultiCase.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("Amount", Amount);
             writer.WriteIntValue("CustomerId", CustomerId);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Amount>("PriceExVat", PriceExVat);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Amount>("PriceIncVat", PriceIncVat);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Amount>("PriceExVat", PriceExVat);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Amount>("PriceIncVat", PriceIncVat);
             writer.WriteIntValue("ProductId", ProductId);
             writer.WriteIntValue("ProductWarehouseId", ProductWarehouseId);
             writer.WriteIntValue("WarehouseId", WarehouseId);

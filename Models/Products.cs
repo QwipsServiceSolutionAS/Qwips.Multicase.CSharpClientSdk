@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Products : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ProductPrice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Qwips.Core.MultiCase.Models.Productprice>? ProductPrice { get; set; }
+        public List<Qwips.Core.ClientSdk.Multicase.Models.Productprice>? ProductPrice { get; set; }
 #nullable restore
 #else
-        public List<Qwips.Core.MultiCase.Models.Productprice> ProductPrice { get; set; }
+        public List<Qwips.Core.ClientSdk.Multicase.Models.Productprice> ProductPrice { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new products and sets the default values.
@@ -34,7 +34,7 @@ namespace Qwips.Core.MultiCase.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"ProductPrice", n => { ProductPrice = n.GetCollectionOfObjectValues<Qwips.Core.MultiCase.Models.Productprice>(Qwips.Core.MultiCase.Models.Productprice.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"ProductPrice", n => { ProductPrice = n.GetCollectionOfObjectValues<Qwips.Core.ClientSdk.Multicase.Models.Productprice>(Qwips.Core.ClientSdk.Multicase.Models.Productprice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Qwips.Core.MultiCase.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Qwips.Core.MultiCase.Models.Productprice>("ProductPrice", ProductPrice);
+            writer.WriteCollectionOfObjectValues<Qwips.Core.ClientSdk.Multicase.Models.Productprice>("ProductPrice", ProductPrice);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

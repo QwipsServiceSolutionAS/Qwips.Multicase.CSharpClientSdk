@@ -1,12 +1,12 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Warehouses.Item.Stocklevels.Item;
-using Qwips.Core.MultiCase.Warehouses.Item.Stocklevels.Search;
+using Qwips.Core.ClientSdk.Multicase.Warehouses.Item.Stocklevels.Item;
+using Qwips.Core.ClientSdk.Multicase.Warehouses.Item.Stocklevels.Search;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Warehouses.Item.Stocklevels {
+namespace Qwips.Core.ClientSdk.Multicase.Warehouses.Item.Stocklevels {
     /// <summary>
     /// Builds and executes requests for operations under \warehouses\{WarehouseId}\stocklevels
     /// </summary>
@@ -15,7 +15,7 @@ namespace Qwips.Core.MultiCase.Warehouses.Item.Stocklevels {
         public SearchRequestBuilder Search { get =>
             new SearchRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.warehouses.item.stocklevels.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.warehouses.item.stocklevels.item collection</summary>
         public WithProductItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("ProductId", position);

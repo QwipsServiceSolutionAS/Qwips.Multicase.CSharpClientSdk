@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Purchaseline : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -14,10 +14,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The SerialNumbers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Serialnumbers? SerialNumbers { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Serialnumbers? SerialNumbers { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Serialnumbers SerialNumbers { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Serialnumbers SerialNumbers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new purchaseline and sets the default values.
@@ -40,7 +40,7 @@ namespace Qwips.Core.MultiCase.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"Pos", n => { Pos = n.GetIntValue(); } },
                 {"QuantityDelivered", n => { QuantityDelivered = n.GetDoubleValue(); } },
-                {"SerialNumbers", n => { SerialNumbers = n.GetObjectValue<Qwips.Core.MultiCase.Models.Serialnumbers>(Qwips.Core.MultiCase.Models.Serialnumbers.CreateFromDiscriminatorValue); } },
+                {"SerialNumbers", n => { SerialNumbers = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Serialnumbers>(Qwips.Core.ClientSdk.Multicase.Models.Serialnumbers.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Qwips.Core.MultiCase.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("Pos", Pos);
             writer.WriteDoubleValue("QuantityDelivered", QuantityDelivered);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Serialnumbers>("SerialNumbers", SerialNumbers);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Serialnumbers>("SerialNumbers", SerialNumbers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

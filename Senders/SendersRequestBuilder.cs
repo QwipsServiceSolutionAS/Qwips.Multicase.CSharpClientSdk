@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Senders.Item;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Senders.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Senders {
+namespace Qwips.Core.ClientSdk.Multicase.Senders {
     /// <summary>
     /// Builds and executes requests for operations under \senders
     /// </summary>
     public class SendersRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.senders.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.senders.item collection</summary>
         public WithSenderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("SenderId", position);
@@ -43,7 +43,7 @@ namespace Qwips.Core.MultiCase.Senders {
         public async Task<List<Senderdetails>> GetAsync(Action<SendersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Senderdetails>(requestInfo, Senderdetails.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Senderdetails>(requestInfo, Senderdetails.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

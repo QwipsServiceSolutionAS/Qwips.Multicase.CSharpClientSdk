@@ -3,7 +3,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
 using System.Runtime.CompilerServices;
 
-namespace Qwips.Core.MultiCase
+namespace Qwips.Core.ClientSdk.Multicase
 {
     public static class MultiCaseStartup
     {

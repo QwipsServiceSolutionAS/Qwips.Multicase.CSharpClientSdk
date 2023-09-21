@@ -1,27 +1,27 @@
-﻿using Qwips.Core.MultiCase.Accounting;
-using Qwips.Core.MultiCase.Auth;
-using Qwips.Core.MultiCase.B24;
-using Qwips.Core.MultiCase.Contacts;
-using Qwips.Core.MultiCase.Customer;
-using Qwips.Core.MultiCase.Customers;
-using Qwips.Core.MultiCase.Discount;
-using Qwips.Core.MultiCase.EHF;
-using Qwips.Core.MultiCase.Giftcard;
-using Qwips.Core.MultiCase.Images;
-using Qwips.Core.MultiCase.Languages;
-using Qwips.Core.MultiCase.Orders;
-using Qwips.Core.MultiCase.Product;
-using Qwips.Core.MultiCase.Products;
-using Qwips.Core.MultiCase.Purchaseorders;
-using Qwips.Core.MultiCase.Report;
-using Qwips.Core.MultiCase.Request;
-using Qwips.Core.MultiCase.Senders;
-using Qwips.Core.MultiCase.MSystem;
-using Qwips.Core.MultiCase.Users;
-using Qwips.Core.MultiCase.Valutatabell;
-using Qwips.Core.MultiCase.Warehouses;
+﻿using Qwips.Core.ClientSdk.Multicase.Accounting;
+using Qwips.Core.ClientSdk.Multicase.Auth;
+using Qwips.Core.ClientSdk.Multicase.B24;
+using Qwips.Core.ClientSdk.Multicase.Contacts;
+using Qwips.Core.ClientSdk.Multicase.Customer;
+using Qwips.Core.ClientSdk.Multicase.Customers;
+using Qwips.Core.ClientSdk.Multicase.Discount;
+using Qwips.Core.ClientSdk.Multicase.EHF;
+using Qwips.Core.ClientSdk.Multicase.Giftcard;
+using Qwips.Core.ClientSdk.Multicase.Images;
+using Qwips.Core.ClientSdk.Multicase.Languages;
+using Qwips.Core.ClientSdk.Multicase.Orders;
+using Qwips.Core.ClientSdk.Multicase.Product;
+using Qwips.Core.ClientSdk.Multicase.Products;
+using Qwips.Core.ClientSdk.Multicase.Purchaseorders;
+using Qwips.Core.ClientSdk.Multicase.Report;
+using Qwips.Core.ClientSdk.Multicase.Request;
+using Qwips.Core.ClientSdk.Multicase.Senders;
+using Qwips.Core.ClientSdk.Multicase.MSystem;
+using Qwips.Core.ClientSdk.Multicase.Users;
+using Qwips.Core.ClientSdk.Multicase.Valutatabell;
+using Qwips.Core.ClientSdk.Multicase.Warehouses;
 
-namespace Qwips.Core.MultiCase
+namespace Qwips.Core.ClientSdk.Multicase
 {
     public interface IMultiCaseClient
     {

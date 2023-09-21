@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Customercontact : IAdditionalDataHolder, IParsable {
         /// <summary>The Active property</summary>
         public bool? Active { get; set; }
@@ -146,10 +146,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The WebUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Webuser? WebUser { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Webuser? WebUser { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Webuser WebUser { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Webuser WebUser { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new customercontact and sets the default values.
@@ -194,7 +194,7 @@ namespace Qwips.Core.MultiCase.Models {
                 {"PrivatePhone", n => { PrivatePhone = n.GetStringValue(); } },
                 {"SMSNotification", n => { SMSNotification = n.GetBoolValue(); } },
                 {"Title", n => { Title = n.GetStringValue(); } },
-                {"WebUser", n => { WebUser = n.GetObjectValue<Qwips.Core.MultiCase.Models.Webuser>(Qwips.Core.MultiCase.Models.Webuser.CreateFromDiscriminatorValue); } },
+                {"WebUser", n => { WebUser = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Webuser>(Qwips.Core.ClientSdk.Multicase.Models.Webuser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -226,7 +226,7 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteStringValue("PrivatePhone", PrivatePhone);
             writer.WriteBoolValue("SMSNotification", SMSNotification);
             writer.WriteStringValue("Title", Title);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Webuser>("WebUser", WebUser);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Webuser>("WebUser", WebUser);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

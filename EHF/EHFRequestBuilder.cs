@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.EHF.ProductCatalog;
+using Qwips.Core.ClientSdk.Multicase.EHF.ProductCatalog;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.EHF {
+namespace Qwips.Core.ClientSdk.Multicase.EHF {
     /// <summary>
     /// Builds and executes requests for operations under \EHF
     /// </summary>

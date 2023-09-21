@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Products.AddCustomerProductLink;
-using Qwips.Core.MultiCase.Products.Changedsince;
-using Qwips.Core.MultiCase.Products.Item;
-using Qwips.Core.MultiCase.Products.Productcreate;
-using Qwips.Core.MultiCase.Products.Returncreate;
-using Qwips.Core.MultiCase.Products.Search;
-using Qwips.Core.MultiCase.Products.Update;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Products.AddCustomerProductLink;
+using Qwips.Core.ClientSdk.Multicase.Products.Changedsince;
+using Qwips.Core.ClientSdk.Multicase.Products.Item;
+using Qwips.Core.ClientSdk.Multicase.Products.Productcreate;
+using Qwips.Core.ClientSdk.Multicase.Products.Returncreate;
+using Qwips.Core.ClientSdk.Multicase.Products.Search;
+using Qwips.Core.ClientSdk.Multicase.Products.Update;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Products {
+namespace Qwips.Core.ClientSdk.Multicase.Products {
     /// <summary>
     /// Builds and executes requests for operations under \products
     /// </summary>
@@ -43,7 +43,7 @@ namespace Qwips.Core.MultiCase.Products {
         public UpdateRequestBuilder Update { get =>
             new UpdateRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.products.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.products.item collection</summary>
         public ProductsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Id", position);
@@ -76,7 +76,7 @@ namespace Qwips.Core.MultiCase.Products {
         public async Task<Productslist> GetAsync(Action<ProductsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Productslist>(requestInfo, Productslist.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Productslist>(requestInfo, Productslist.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Get list of all products

@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public enum Stockcheckmodeenum {
         [EnumMember(Value = "PlaceOrderAsIs")]
         PlaceOrderAsIs,

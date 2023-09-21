@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Orders.Delete {
+namespace Qwips.Core.ClientSdk.Multicase.Orders.Delete {
     /// <summary>
     /// Builds and executes requests for operations under \orders\delete
     /// </summary>
@@ -41,7 +41,7 @@ namespace Qwips.Core.MultiCase.Orders.Delete {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<Ordercreationresult>(requestInfo, Ordercreationresult.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Ordercreationresult>(requestInfo, Ordercreationresult.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Deletes an Order

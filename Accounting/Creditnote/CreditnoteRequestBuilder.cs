@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Accounting.Creditnote.Item;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Creditnote.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Accounting.Creditnote {
+namespace Qwips.Core.ClientSdk.Multicase.Accounting.Creditnote {
     /// <summary>
     /// Builds and executes requests for operations under \accounting\creditnote
     /// </summary>
     public class CreditnoteRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.accounting.creditnote.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.accounting.creditnote.item collection</summary>
         public WithCreditNoteNumberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("CreditNoteNumber", position);

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Customers.Search {
+namespace Qwips.Core.ClientSdk.Multicase.Customers.Search {
     /// <summary>
     /// Builds and executes requests for operations under \customers\search
     /// </summary>
@@ -39,7 +39,7 @@ namespace Qwips.Core.MultiCase.Customers.Search {
         public async Task<Customerslistresponse> GetAsync(Action<SearchRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Customerslistresponse>(requestInfo, Customerslistresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Customerslistresponse>(requestInfo, Customerslistresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Search for customers by customer name

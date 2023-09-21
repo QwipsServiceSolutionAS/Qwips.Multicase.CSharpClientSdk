@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Request.CustomerContactCreate;
-using Qwips.Core.MultiCase.Request.CustomerContactGet;
-using Qwips.Core.MultiCase.Request.CustomerContactUpdate;
+using Qwips.Core.ClientSdk.Multicase.Request.CustomerContactCreate;
+using Qwips.Core.ClientSdk.Multicase.Request.CustomerContactGet;
+using Qwips.Core.ClientSdk.Multicase.Request.CustomerContactUpdate;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Request {
+namespace Qwips.Core.ClientSdk.Multicase.Request {
     /// <summary>
     /// Builds and executes requests for operations under \request
     /// </summary>

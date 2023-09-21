@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Customer.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Customer.Item {
     /// <summary>
     /// Builds and executes requests for operations under \customer\{Id}
     /// </summary>
@@ -39,7 +39,7 @@ namespace Qwips.Core.MultiCase.Customer.Item {
         public async Task<Customer1> GetAsync(Action<CustomerItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Customer1>(requestInfo, Customer1.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Customer1>(requestInfo, Customer1.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Retrieve one customer by id

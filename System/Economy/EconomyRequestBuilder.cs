@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.MSystem.Economy.Paymentterms;
+using Qwips.Core.ClientSdk.Multicase.MSystem.Economy.Paymentterms;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.MSystem.Economy {
+namespace Qwips.Core.ClientSdk.Multicase.MSystem.Economy {
     /// <summary>
     /// Builds and executes requests for operations under \system\economy
     /// </summary>

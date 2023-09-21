@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.MSystem.Warehouse.Freights;
+using Qwips.Core.ClientSdk.Multicase.MSystem.Warehouse.Freights;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.MSystem.Warehouse {
+namespace Qwips.Core.ClientSdk.Multicase.MSystem.Warehouse {
     /// <summary>
     /// Builds and executes requests for operations under \system\warehouse
     /// </summary>

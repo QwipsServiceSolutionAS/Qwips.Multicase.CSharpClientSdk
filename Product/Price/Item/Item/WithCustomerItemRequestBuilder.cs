@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Product.Price.Item.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Product.Price.Item.Item {
     /// <summary>
     /// Builds and executes requests for operations under \product\price\{ProductId}\{CustomerId}
     /// </summary>
@@ -39,7 +39,7 @@ namespace Qwips.Core.MultiCase.Product.Price.Item.Item {
         public async Task<List<Productprice1>> GetAsync(Action<WithCustomerItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Productprice1>(requestInfo, Productprice1.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Productprice1>(requestInfo, Productprice1.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <summary>

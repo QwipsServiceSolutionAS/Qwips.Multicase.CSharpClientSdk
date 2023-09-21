@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Giftcard.GetGiftcardTransactionList {
+namespace Qwips.Core.ClientSdk.Multicase.Giftcard.GetGiftcardTransactionList {
     /// <summary>
     /// Builds and executes requests for operations under \Giftcard\GetGiftcardTransactionList
     /// </summary>
@@ -39,7 +39,7 @@ namespace Qwips.Core.MultiCase.Giftcard.GetGiftcardTransactionList {
         public async Task<List<Giftcardtransaction>> GetAsync(Action<GetGiftcardTransactionListRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Giftcardtransaction>(requestInfo, Giftcardtransaction.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Giftcardtransaction>(requestInfo, Giftcardtransaction.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

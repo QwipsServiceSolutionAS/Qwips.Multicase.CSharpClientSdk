@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Productprice : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -20,10 +20,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The InPrice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Inprice? InPrice { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Inprice? InPrice { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Inprice InPrice { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Inprice InPrice { get; set; }
 #endif
         /// <summary>The Note property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,18 +36,18 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The OutPrice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Outprice? OutPrice { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Outprice? OutPrice { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Outprice OutPrice { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Outprice OutPrice { get; set; }
 #endif
         /// <summary>The Product property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Product? Product { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Product? Product { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Product Product { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Product Product { get; set; }
 #endif
         /// <summary>The Quantity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,10 +78,10 @@ namespace Qwips.Core.MultiCase.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"BidListPriceID", n => { BidListPriceID = n.GetIntValue(); } },
                 {"BidNumber", n => { BidNumber = n.GetStringValue(); } },
-                {"InPrice", n => { InPrice = n.GetObjectValue<Qwips.Core.MultiCase.Models.Inprice>(Qwips.Core.MultiCase.Models.Inprice.CreateFromDiscriminatorValue); } },
+                {"InPrice", n => { InPrice = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Inprice>(Qwips.Core.ClientSdk.Multicase.Models.Inprice.CreateFromDiscriminatorValue); } },
                 {"Note", n => { Note = n.GetStringValue(); } },
-                {"OutPrice", n => { OutPrice = n.GetObjectValue<Qwips.Core.MultiCase.Models.Outprice>(Qwips.Core.MultiCase.Models.Outprice.CreateFromDiscriminatorValue); } },
-                {"Product", n => { Product = n.GetObjectValue<Qwips.Core.MultiCase.Models.Product>(Qwips.Core.MultiCase.Models.Product.CreateFromDiscriminatorValue); } },
+                {"OutPrice", n => { OutPrice = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Outprice>(Qwips.Core.ClientSdk.Multicase.Models.Outprice.CreateFromDiscriminatorValue); } },
+                {"Product", n => { Product = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Product>(Qwips.Core.ClientSdk.Multicase.Models.Product.CreateFromDiscriminatorValue); } },
                 {"Quantity", n => { Quantity = n.GetStringValue(); } },
             };
         }
@@ -93,10 +93,10 @@ namespace Qwips.Core.MultiCase.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("BidListPriceID", BidListPriceID);
             writer.WriteStringValue("BidNumber", BidNumber);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Inprice>("InPrice", InPrice);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Inprice>("InPrice", InPrice);
             writer.WriteStringValue("Note", Note);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Outprice>("OutPrice", OutPrice);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Product>("Product", Product);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Outprice>("OutPrice", OutPrice);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Product>("Product", Product);
             writer.WriteStringValue("Quantity", Quantity);
             writer.WriteAdditionalData(AdditionalData);
         }

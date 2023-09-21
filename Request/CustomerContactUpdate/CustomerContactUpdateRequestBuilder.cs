@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Request.CustomerContactUpdate {
+namespace Qwips.Core.ClientSdk.Multicase.Request.CustomerContactUpdate {
     /// <summary>
     /// Builds and executes requests for operations under \request\CustomerContactUpdate
     /// </summary>
@@ -34,14 +34,14 @@ namespace Qwips.Core.MultiCase.Request.CustomerContactUpdate {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomerContactUpdateResponse?> PostAsync(Qwips.Core.MultiCase.Models.Customercontactupdate body, Action<CustomerContactUpdateRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomerContactUpdateResponse?> PostAsync(Qwips.Core.ClientSdk.Multicase.Models.Customercontactupdate body, Action<CustomerContactUpdateRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<CustomerContactUpdateResponse> PostAsync(Qwips.Core.MultiCase.Models.Customercontactupdate body, Action<CustomerContactUpdateRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomerContactUpdateResponse> PostAsync(Qwips.Core.ClientSdk.Multicase.Models.Customercontactupdate body, Action<CustomerContactUpdateRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<CustomerContactUpdateResponse>(requestInfo, CustomerContactUpdateResponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomerContactUpdateResponse>(requestInfo, CustomerContactUpdateResponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Update a customer contact
@@ -50,10 +50,10 @@ namespace Qwips.Core.MultiCase.Request.CustomerContactUpdate {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Qwips.Core.MultiCase.Models.Customercontactupdate body, Action<CustomerContactUpdateRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Qwips.Core.ClientSdk.Multicase.Models.Customercontactupdate body, Action<CustomerContactUpdateRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Qwips.Core.MultiCase.Models.Customercontactupdate body, Action<CustomerContactUpdateRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Qwips.Core.ClientSdk.Multicase.Models.Customercontactupdate body, Action<CustomerContactUpdateRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {

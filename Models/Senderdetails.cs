@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Senderdetails : IAdditionalDataHolder, IParsable {
         /// <summary>The Abonnement property</summary>
         public bool? Abonnement { get; set; }

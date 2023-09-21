@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Products.Item.Images.Item;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Products.Item.Images.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Products.Item.Images {
+namespace Qwips.Core.ClientSdk.Multicase.Products.Item.Images {
     /// <summary>
     /// Builds and executes requests for operations under \products\{Id}\images
     /// </summary>
     public class ImagesRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.products.item.images.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.products.item.images.item collection</summary>
         public WithImageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("ImageId", position);
@@ -43,7 +43,7 @@ namespace Qwips.Core.MultiCase.Products.Item.Images {
         public async Task<List<Productimagedata>> GetAsync(Action<ImagesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Productimagedata>(requestInfo, Productimagedata.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Productimagedata>(requestInfo, Productimagedata.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Qwips.Core.MultiCase.Products.Item.Images {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<Createproductimageresponse>(requestInfo, Createproductimageresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Createproductimageresponse>(requestInfo, Createproductimageresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.MSystem.Warehouse.Freights {
+namespace Qwips.Core.ClientSdk.Multicase.MSystem.Warehouse.Freights {
     /// <summary>
     /// Builds and executes requests for operations under \system\warehouse\freights
     /// </summary>
@@ -36,7 +36,7 @@ namespace Qwips.Core.MultiCase.MSystem.Warehouse.Freights {
         public async Task<List<Freight2>> GetAsync(Action<FreightsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Freight2>(requestInfo, Freight2.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Freight2>(requestInfo, Freight2.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

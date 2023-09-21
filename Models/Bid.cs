@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Bid : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -36,18 +36,18 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Products property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Products? Products { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Products? Products { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Products Products { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Products Products { get; set; }
 #endif
         /// <summary>The Supplier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Supplier? Supplier { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Supplier? Supplier { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Supplier Supplier { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Supplier Supplier { get; set; }
 #endif
         /// <summary>The ToDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,8 +80,8 @@ namespace Qwips.Core.MultiCase.Models {
                 {"BidID", n => { BidID = n.GetIntValue(); } },
                 {"FromDate", n => { FromDate = n.GetStringValue(); } },
                 {"Name", n => { Name = n.GetStringValue(); } },
-                {"Products", n => { Products = n.GetObjectValue<Qwips.Core.MultiCase.Models.Products>(Qwips.Core.MultiCase.Models.Products.CreateFromDiscriminatorValue); } },
-                {"Supplier", n => { Supplier = n.GetObjectValue<Qwips.Core.MultiCase.Models.Supplier>(Qwips.Core.MultiCase.Models.Supplier.CreateFromDiscriminatorValue); } },
+                {"Products", n => { Products = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Products>(Qwips.Core.ClientSdk.Multicase.Models.Products.CreateFromDiscriminatorValue); } },
+                {"Supplier", n => { Supplier = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Supplier>(Qwips.Core.ClientSdk.Multicase.Models.Supplier.CreateFromDiscriminatorValue); } },
                 {"ToDate", n => { ToDate = n.GetStringValue(); } },
             };
         }
@@ -95,8 +95,8 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteIntValue("BidID", BidID);
             writer.WriteStringValue("FromDate", FromDate);
             writer.WriteStringValue("Name", Name);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Products>("Products", Products);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Supplier>("Supplier", Supplier);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Products>("Products", Products);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Supplier>("Supplier", Supplier);
             writer.WriteStringValue("ToDate", ToDate);
             writer.WriteAdditionalData(AdditionalData);
         }

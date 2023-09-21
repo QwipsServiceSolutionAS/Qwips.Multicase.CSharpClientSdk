@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Giftcard.GetGiftcard {
+namespace Qwips.Core.ClientSdk.Multicase.Giftcard.GetGiftcard {
     /// <summary>
     /// Builds and executes requests for operations under \Giftcard\GetGiftcard
     /// </summary>
@@ -33,13 +33,13 @@ namespace Qwips.Core.MultiCase.Giftcard.GetGiftcard {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Qwips.Core.MultiCase.Models.Giftcard?> GetAsync(Action<GetGiftcardRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Qwips.Core.ClientSdk.Multicase.Models.Giftcard?> GetAsync(Action<GetGiftcardRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Qwips.Core.MultiCase.Models.Giftcard> GetAsync(Action<GetGiftcardRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Qwips.Core.ClientSdk.Multicase.Models.Giftcard> GetAsync(Action<GetGiftcardRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Qwips.Core.MultiCase.Models.Giftcard>(requestInfo, Qwips.Core.MultiCase.Models.Giftcard.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Qwips.Core.ClientSdk.Multicase.Models.Giftcard>(requestInfo, Qwips.Core.ClientSdk.Multicase.Models.Giftcard.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

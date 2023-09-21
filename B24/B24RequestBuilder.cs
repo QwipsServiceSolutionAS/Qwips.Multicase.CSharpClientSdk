@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.B24.Pricat;
+using Qwips.Core.ClientSdk.Multicase.B24.Pricat;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.B24 {
+namespace Qwips.Core.ClientSdk.Multicase.B24 {
     /// <summary>
     /// Builds and executes requests for operations under \B24
     /// </summary>

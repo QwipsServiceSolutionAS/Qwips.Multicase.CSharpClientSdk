@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Createcustomer : IAdditionalDataHolder, IParsable {
         /// <summary>The Accounting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,10 +36,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Communication property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Communication? Communication { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Communication? Communication { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Communication Communication { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Communication Communication { get; set; }
 #endif
         /// <summary>The CompanyNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,10 +60,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Country? Country { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Country? Country { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Country Country { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Country Country { get; set; }
 #endif
         /// <summary>The CustomerGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,10 +194,10 @@ namespace Qwips.Core.MultiCase.Models {
                 {"Active", n => { Active = n.GetBoolValue(); } },
                 {"Addresses", n => { Addresses = n.GetObjectValue<Customeraddresses>(Customeraddresses.CreateFromDiscriminatorValue); } },
                 {"Agreements", n => { Agreements = n.GetObjectValue<Customeragreements>(Customeragreements.CreateFromDiscriminatorValue); } },
-                {"Communication", n => { Communication = n.GetObjectValue<Qwips.Core.MultiCase.Models.Communication>(Qwips.Core.MultiCase.Models.Communication.CreateFromDiscriminatorValue); } },
+                {"Communication", n => { Communication = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Communication>(Qwips.Core.ClientSdk.Multicase.Models.Communication.CreateFromDiscriminatorValue); } },
                 {"CompanyNumber", n => { CompanyNumber = n.GetStringValue(); } },
                 {"Contacts", n => { Contacts = n.GetCollectionOfObjectValues<Customercontact>(Customercontact.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Country", n => { Country = n.GetObjectValue<Qwips.Core.MultiCase.Models.Country>(Qwips.Core.MultiCase.Models.Country.CreateFromDiscriminatorValue); } },
+                {"Country", n => { Country = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Country>(Qwips.Core.ClientSdk.Multicase.Models.Country.CreateFromDiscriminatorValue); } },
                 {"CustomerGroups", n => { CustomerGroups = n.GetCollectionOfObjectValues<Customergroup>(Customergroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"CustomerNumber", n => { CustomerNumber = n.GetIntValue(); } },
                 {"Delivery", n => { Delivery = n.GetObjectValue<Customerdelivery>(Customerdelivery.CreateFromDiscriminatorValue); } },
@@ -227,10 +227,10 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteBoolValue("Active", Active);
             writer.WriteObjectValue<Customeraddresses>("Addresses", Addresses);
             writer.WriteObjectValue<Customeragreements>("Agreements", Agreements);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Communication>("Communication", Communication);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Communication>("Communication", Communication);
             writer.WriteStringValue("CompanyNumber", CompanyNumber);
             writer.WriteCollectionOfObjectValues<Customercontact>("Contacts", Contacts);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Country>("Country", Country);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Country>("Country", Country);
             writer.WriteCollectionOfObjectValues<Customergroup>("CustomerGroups", CustomerGroups);
             writer.WriteIntValue("CustomerNumber", CustomerNumber);
             writer.WriteObjectValue<Customerdelivery>("Delivery", Delivery);

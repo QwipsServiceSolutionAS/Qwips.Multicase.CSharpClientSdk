@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Product.Price.Item.Item;
+using Qwips.Core.ClientSdk.Multicase.Product.Price.Item.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Product.Price.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Product.Price.Item {
     /// <summary>
     /// Builds and executes requests for operations under \product\price\{ProductId}
     /// </summary>
     public class WithProductItemRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.product.price.item.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.product.price.item.item collection</summary>
         public WithCustomerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("CustomerId", position);

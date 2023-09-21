@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Products.Update.Listprice;
+using Qwips.Core.ClientSdk.Multicase.Products.Update.Listprice;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Products.Update {
+namespace Qwips.Core.ClientSdk.Multicase.Products.Update {
     /// <summary>
     /// Builds and executes requests for operations under \products\update
     /// </summary>

@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Valutatabell.Item;
+using Qwips.Core.ClientSdk.Multicase.Valutatabell.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Valutatabell {
+namespace Qwips.Core.ClientSdk.Multicase.Valutatabell {
     /// <summary>
     /// Builds and executes requests for operations under \valutatabell
     /// </summary>
     public class ValutatabellRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.valutatabell.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.valutatabell.item collection</summary>
         public WithAvsAdresseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("AvsAdresseId", position);

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Customers.Item;
-using Qwips.Core.MultiCase.Customers.Search;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Customers.Item;
+using Qwips.Core.ClientSdk.Multicase.Customers.Search;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Customers {
+namespace Qwips.Core.ClientSdk.Multicase.Customers {
     /// <summary>
     /// Builds and executes requests for operations under \customers
     /// </summary>
@@ -18,7 +18,7 @@ namespace Qwips.Core.MultiCase.Customers {
         public SearchRequestBuilder Search { get =>
             new SearchRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.customers.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.customers.item collection</summary>
         public WithCustomerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("CustomerId", position);
@@ -51,7 +51,7 @@ namespace Qwips.Core.MultiCase.Customers {
         public async Task<Customerslistresponse> GetAsync(Action<CustomersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Customerslistresponse>(requestInfo, Customerslistresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Customerslistresponse>(requestInfo, Customerslistresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Retrieve one or more customers details

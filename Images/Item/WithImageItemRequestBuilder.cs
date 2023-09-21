@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Images.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Images.Item {
     /// <summary>
     /// Builds and executes requests for operations under \images\{ImageId}
     /// </summary>
@@ -35,7 +35,7 @@ namespace Qwips.Core.MultiCase.Images.Item {
         public async Task<WithImageResponse> GetAsync(Action<WithImageItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<WithImageResponse>(requestInfo, WithImageResponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WithImageResponse>(requestInfo, WithImageResponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

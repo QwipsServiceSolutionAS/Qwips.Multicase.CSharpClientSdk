@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Orderhead : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -62,10 +62,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The FreightMethod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Freightmethod? FreightMethod { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Freightmethod? FreightMethod { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Freightmethod FreightMethod { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Freightmethod FreightMethod { get; set; }
 #endif
         /// <summary>The OrderId property</summary>
         public int? OrderId { get; set; }
@@ -74,10 +74,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The OrderType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Ordertype? OrderType { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Ordertype? OrderType { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Ordertype OrderType { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Ordertype OrderType { get; set; }
 #endif
         /// <summary>The PaymentTerm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,10 +90,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Project? Project { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Project? Project { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Project Project { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Project Project { get; set; }
 #endif
         /// <summary>The RefPerson property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,10 +106,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The Seller property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Seller? Seller { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Seller? Seller { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Seller Seller { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Seller Seller { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new orderhead and sets the default values.
@@ -138,14 +138,14 @@ namespace Qwips.Core.MultiCase.Models {
                 {"ExternalOrderNumber", n => { ExternalOrderNumber = n.GetStringValue(); } },
                 {"ExtraInfoXML", n => { ExtraInfoXML = n.GetObjectValue<Orderhead_ExtraInfoXML>(Orderhead_ExtraInfoXML.CreateFromDiscriminatorValue); } },
                 {"FollowUpDate", n => { FollowUpDate = n.GetDateTimeOffsetValue(); } },
-                {"FreightMethod", n => { FreightMethod = n.GetObjectValue<Qwips.Core.MultiCase.Models.Freightmethod>(Qwips.Core.MultiCase.Models.Freightmethod.CreateFromDiscriminatorValue); } },
+                {"FreightMethod", n => { FreightMethod = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Freightmethod>(Qwips.Core.ClientSdk.Multicase.Models.Freightmethod.CreateFromDiscriminatorValue); } },
                 {"OrderId", n => { OrderId = n.GetIntValue(); } },
                 {"OrderNumber", n => { OrderNumber = n.GetIntValue(); } },
-                {"OrderType", n => { OrderType = n.GetObjectValue<Qwips.Core.MultiCase.Models.Ordertype>(Qwips.Core.MultiCase.Models.Ordertype.CreateFromDiscriminatorValue); } },
+                {"OrderType", n => { OrderType = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Ordertype>(Qwips.Core.ClientSdk.Multicase.Models.Ordertype.CreateFromDiscriminatorValue); } },
                 {"PaymentTerm", n => { PaymentTerm = n.GetObjectValue<Paymentterm1>(Paymentterm1.CreateFromDiscriminatorValue); } },
-                {"Project", n => { Project = n.GetObjectValue<Qwips.Core.MultiCase.Models.Project>(Qwips.Core.MultiCase.Models.Project.CreateFromDiscriminatorValue); } },
+                {"Project", n => { Project = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Project>(Qwips.Core.ClientSdk.Multicase.Models.Project.CreateFromDiscriminatorValue); } },
                 {"RefPerson", n => { RefPerson = n.GetStringValue(); } },
-                {"Seller", n => { Seller = n.GetObjectValue<Qwips.Core.MultiCase.Models.Seller>(Qwips.Core.MultiCase.Models.Seller.CreateFromDiscriminatorValue); } },
+                {"Seller", n => { Seller = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Seller>(Qwips.Core.ClientSdk.Multicase.Models.Seller.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -162,14 +162,14 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteStringValue("ExternalOrderNumber", ExternalOrderNumber);
             writer.WriteObjectValue<Orderhead_ExtraInfoXML>("ExtraInfoXML", ExtraInfoXML);
             writer.WriteDateTimeOffsetValue("FollowUpDate", FollowUpDate);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Freightmethod>("FreightMethod", FreightMethod);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Freightmethod>("FreightMethod", FreightMethod);
             writer.WriteIntValue("OrderId", OrderId);
             writer.WriteIntValue("OrderNumber", OrderNumber);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Ordertype>("OrderType", OrderType);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Ordertype>("OrderType", OrderType);
             writer.WriteObjectValue<Paymentterm1>("PaymentTerm", PaymentTerm);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Project>("Project", Project);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Project>("Project", Project);
             writer.WriteStringValue("RefPerson", RefPerson);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Seller>("Seller", Seller);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Seller>("Seller", Seller);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

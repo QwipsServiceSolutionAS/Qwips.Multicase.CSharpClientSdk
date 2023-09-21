@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Purchaseorders.Create {
+namespace Qwips.Core.ClientSdk.Multicase.Purchaseorders.Create {
     /// <summary>
     /// Builds and executes requests for operations under \purchaseorders\create
     /// </summary>
@@ -41,7 +41,7 @@ namespace Qwips.Core.MultiCase.Purchaseorders.Create {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<Purchaseordercreationresult>(requestInfo, Purchaseordercreationresult.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Purchaseordercreationresult>(requestInfo, Purchaseordercreationresult.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// &lt;span class=&apos;code&apos;&gt;WarehouseCode&lt;/span&gt;: WarehouseId or LagerGeoOmr.Kortnavn/LagerFunksjon.Kortnavn/LagerGeoNavn.Kortnavn f.ex. SFJ/SLG/HVD&lt;br/&gt;&lt;span class=&apos;code&apos;&gt;SenderId&lt;/span&gt;: Overrides avsender that would be found by warehouse. Use when specified warehouse belongs to different avsender&lt;br/&gt;&lt;span class=&apos;code&apos;&gt;UseMcSuppliersPrice&lt;/span&gt;: When true (default), eventual values for currency and price (on the line level) will be ignored, and supplier&apos;s price and supplier&apos;s                                                default currency will be used. When false, CurrencyCode and line prices have to be provided&lt;br/&gt;&lt;span class=&apos;code&apos;&gt;FreightId&lt;/span&gt;: If omitted, supplier&apos;s default freight is used&lt;br/&gt;&lt;span class=&apos;code&apos;&gt;Combined&lt;/span&gt;: True = deliver all products together, false = can be sent separately. Default is false&lt;br/&gt;&lt;span class=&apos;code&apos;&gt;&lt;/span&gt;&lt;br/&gt;&lt;span class=&apos;code&apos;&gt;&lt;/span&gt;&lt;br/&gt;

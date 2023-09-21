@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Orders.Create;
-using Qwips.Core.MultiCase.Orders.Delete;
-using Qwips.Core.MultiCase.Orders.Get;
-using Qwips.Core.MultiCase.Orders.Orderdetailswiftcourt;
-using Qwips.Core.MultiCase.Orders.Orderstatus;
-using Qwips.Core.MultiCase.Orders.Update;
+using Qwips.Core.ClientSdk.Multicase.Orders.Create;
+using Qwips.Core.ClientSdk.Multicase.Orders.Delete;
+using Qwips.Core.ClientSdk.Multicase.Orders.Get;
+using Qwips.Core.ClientSdk.Multicase.Orders.Orderdetailswiftcourt;
+using Qwips.Core.ClientSdk.Multicase.Orders.Orderstatus;
+using Qwips.Core.ClientSdk.Multicase.Orders.Update;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Orders {
+namespace Qwips.Core.ClientSdk.Multicase.Orders {
     /// <summary>
     /// Builds and executes requests for operations under \orders
     /// </summary>

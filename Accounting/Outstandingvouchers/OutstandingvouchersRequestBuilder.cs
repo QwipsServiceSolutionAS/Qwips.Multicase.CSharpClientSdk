@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Accounting.Outstandingvouchers.Insert;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Outstandingvouchers.Insert;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Accounting.Outstandingvouchers {
+namespace Qwips.Core.ClientSdk.Multicase.Accounting.Outstandingvouchers {
     /// <summary>
     /// Builds and executes requests for operations under \accounting\outstandingvouchers
     /// </summary>

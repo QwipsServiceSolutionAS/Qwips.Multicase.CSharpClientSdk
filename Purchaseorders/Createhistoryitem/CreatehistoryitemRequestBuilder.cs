@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Purchaseorders.Createhistoryitem {
+namespace Qwips.Core.ClientSdk.Multicase.Purchaseorders.Createhistoryitem {
     /// <summary>
     /// Builds and executes requests for operations under \purchaseorders\createhistoryitem
     /// </summary>
@@ -41,7 +41,7 @@ namespace Qwips.Core.MultiCase.Purchaseorders.Createhistoryitem {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<Responsestatus>(requestInfo, Responsestatus.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Responsestatus>(requestInfo, Responsestatus.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Create a history item

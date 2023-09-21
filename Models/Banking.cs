@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Banking : IAdditionalDataHolder, IParsable {
         /// <summary>The Account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,10 +66,10 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The PriceGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Pricegroup? PriceGroup { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Pricegroup? PriceGroup { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Pricegroup PriceGroup { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Pricegroup PriceGroup { get; set; }
 #endif
         /// <summary>The SalesCurrency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Qwips.Core.MultiCase.Models {
                 {"IsTaxRequired", n => { IsTaxRequired = n.GetBoolValue(); } },
                 {"OwnCreditRating", n => { OwnCreditRating = n.GetStringValue(); } },
                 {"PostalGiroNumber", n => { PostalGiroNumber = n.GetStringValue(); } },
-                {"PriceGroup", n => { PriceGroup = n.GetObjectValue<Qwips.Core.MultiCase.Models.Pricegroup>(Qwips.Core.MultiCase.Models.Pricegroup.CreateFromDiscriminatorValue); } },
+                {"PriceGroup", n => { PriceGroup = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Pricegroup>(Qwips.Core.ClientSdk.Multicase.Models.Pricegroup.CreateFromDiscriminatorValue); } },
                 {"SalesCurrency", n => { SalesCurrency = n.GetObjectValue<Currency>(Currency.CreateFromDiscriminatorValue); } },
                 {"SwiftCode", n => { SwiftCode = n.GetStringValue(); } },
                 {"TaxModel", n => { TaxModel = n.GetEnumValue<Taxmodelenum>(); } },
@@ -150,7 +150,7 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteBoolValue("IsTaxRequired", IsTaxRequired);
             writer.WriteStringValue("OwnCreditRating", OwnCreditRating);
             writer.WriteStringValue("PostalGiroNumber", PostalGiroNumber);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Pricegroup>("PriceGroup", PriceGroup);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Pricegroup>("PriceGroup", PriceGroup);
             writer.WriteObjectValue<Currency>("SalesCurrency", SalesCurrency);
             writer.WriteStringValue("SwiftCode", SwiftCode);
             writer.WriteEnumValue<Taxmodelenum>("TaxModel", TaxModel);

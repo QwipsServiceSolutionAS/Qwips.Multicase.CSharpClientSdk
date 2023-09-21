@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Updategiftcard : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Giftcard property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Giftcard? Giftcard { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Giftcard? Giftcard { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Giftcard Giftcard { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Giftcard Giftcard { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new Updategiftcard and sets the default values.
@@ -34,7 +34,7 @@ namespace Qwips.Core.MultiCase.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Giftcard", n => { Giftcard = n.GetObjectValue<Qwips.Core.MultiCase.Models.Giftcard>(Qwips.Core.MultiCase.Models.Giftcard.CreateFromDiscriminatorValue); } },
+                {"Giftcard", n => { Giftcard = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Giftcard>(Qwips.Core.ClientSdk.Multicase.Models.Giftcard.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Qwips.Core.MultiCase.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Giftcard>("Giftcard", Giftcard);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Giftcard>("Giftcard", Giftcard);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Contacts.Item;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Contacts.Item;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Contacts {
+namespace Qwips.Core.ClientSdk.Multicase.Contacts {
     /// <summary>
     /// Builds and executes requests for operations under \contacts
     /// </summary>
     public class ContactsRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.contacts.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.contacts.item collection</summary>
         public ContactsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Id", position);
@@ -46,7 +46,7 @@ namespace Qwips.Core.MultiCase.Contacts {
         public async Task<Contactresponse> GetAsync(Action<ContactsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Contactresponse>(requestInfo, Contactresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Contactresponse>(requestInfo, Contactresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Retrieve list of contacts, all or changed

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Giftcard.GetBarcode {
+namespace Qwips.Core.ClientSdk.Multicase.Giftcard.GetBarcode {
     /// <summary>
     /// Builds and executes requests for operations under \Giftcard\GetBarcode
     /// </summary>
@@ -38,7 +38,7 @@ namespace Qwips.Core.MultiCase.Giftcard.GetBarcode {
         public async Task<List<int?>> GetAsync(Action<GetBarcodeRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<int?>(requestInfo, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<int?>(requestInfo, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

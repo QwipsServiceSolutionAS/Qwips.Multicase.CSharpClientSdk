@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Invoicereceiver : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The CombinedInvoice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Combinedinvoice? CombinedInvoice { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Combinedinvoice? CombinedInvoice { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Combinedinvoice CombinedInvoice { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Combinedinvoice CombinedInvoice { get; set; }
 #endif
         /// <summary>The Customer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace Qwips.Core.MultiCase.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"CombinedInvoice", n => { CombinedInvoice = n.GetObjectValue<Qwips.Core.MultiCase.Models.Combinedinvoice>(Qwips.Core.MultiCase.Models.Combinedinvoice.CreateFromDiscriminatorValue); } },
+                {"CombinedInvoice", n => { CombinedInvoice = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Combinedinvoice>(Qwips.Core.ClientSdk.Multicase.Models.Combinedinvoice.CreateFromDiscriminatorValue); } },
                 {"Customer", n => { Customer = n.GetObjectValue<Customer2>(Customer2.CreateFromDiscriminatorValue); } },
                 {"ImmediateInvoice", n => { ImmediateInvoice = n.GetBoolValue(); } },
             };
@@ -55,7 +55,7 @@ namespace Qwips.Core.MultiCase.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Combinedinvoice>("CombinedInvoice", CombinedInvoice);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Combinedinvoice>("CombinedInvoice", CombinedInvoice);
             writer.WriteObjectValue<Customer2>("Customer", Customer);
             writer.WriteBoolValue("ImmediateInvoice", ImmediateInvoice);
             writer.WriteAdditionalData(AdditionalData);

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Customer.Create;
-using Qwips.Core.MultiCase.Customer.Item;
-using Qwips.Core.MultiCase.Customer.Search;
+using Qwips.Core.ClientSdk.Multicase.Customer.Create;
+using Qwips.Core.ClientSdk.Multicase.Customer.Item;
+using Qwips.Core.ClientSdk.Multicase.Customer.Search;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Customer {
+namespace Qwips.Core.ClientSdk.Multicase.Customer {
     /// <summary>
     /// Builds and executes requests for operations under \customer
     /// </summary>
@@ -20,7 +20,7 @@ namespace Qwips.Core.MultiCase.Customer {
         public SearchRequestBuilder Search { get =>
             new SearchRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.customer.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.customer.item collection</summary>
         public CustomerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Id", position);

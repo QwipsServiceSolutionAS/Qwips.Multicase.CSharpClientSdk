@@ -1,13 +1,10 @@
-using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Accounting.Bundles {
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+namespace Qwips.Core.ClientSdk.Multicase.Accounting.Bundles
+{
     /// <summary>
     /// Builds and executes requests for operations under \accounting\bundles
     /// </summary>
@@ -33,13 +30,13 @@ namespace Qwips.Core.MultiCase.Accounting.Bundles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Qwips.Core.MultiCase.Models.Bundles?> GetAsync(Action<BundlesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Qwips.Core.ClientSdk.Multicase.Models.Bundles?> GetAsync(Action<BundlesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Qwips.Core.MultiCase.Models.Bundles> GetAsync(Action<BundlesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Qwips.Core.ClientSdk.Multicase.Models.Bundles> GetAsync(Action<BundlesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Qwips.Core.MultiCase.Models.Bundles>(requestInfo, Qwips.Core.MultiCase.Models.Bundles.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Qwips.Core.ClientSdk.Multicase.Models.Bundles>(requestInfo, Qwips.Core.ClientSdk.Multicase.Models.Bundles.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Retrieve a list of bundles

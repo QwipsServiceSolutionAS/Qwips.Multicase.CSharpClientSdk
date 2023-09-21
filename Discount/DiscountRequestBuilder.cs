@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Discount.Bid;
+using Qwips.Core.ClientSdk.Multicase.Discount.Bid;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Discount {
+namespace Qwips.Core.ClientSdk.Multicase.Discount {
     /// <summary>
     /// Builds and executes requests for operations under \discount
     /// </summary>

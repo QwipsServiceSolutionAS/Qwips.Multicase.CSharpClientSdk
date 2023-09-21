@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Purchaseorders.Create;
-using Qwips.Core.MultiCase.Purchaseorders.Createhistoryitem;
-using Qwips.Core.MultiCase.Purchaseorders.Item;
-using Qwips.Core.MultiCase.Purchaseorders.Receive;
+using Qwips.Core.ClientSdk.Multicase.Purchaseorders.Create;
+using Qwips.Core.ClientSdk.Multicase.Purchaseorders.Createhistoryitem;
+using Qwips.Core.ClientSdk.Multicase.Purchaseorders.Item;
+using Qwips.Core.ClientSdk.Multicase.Purchaseorders.Receive;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Purchaseorders {
+namespace Qwips.Core.ClientSdk.Multicase.Purchaseorders {
     /// <summary>
     /// Builds and executes requests for operations under \purchaseorders
     /// </summary>
@@ -25,7 +25,7 @@ namespace Qwips.Core.MultiCase.Purchaseorders {
         public ReceiveRequestBuilder Receive { get =>
             new ReceiveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.purchaseorders.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.purchaseorders.item collection</summary>
         public WithGuItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Guid", position);

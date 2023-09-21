@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Orders.Orderstatus.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Orders.Orderstatus.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orders\orderstatus\{Numbers}
     /// </summary>
@@ -36,7 +36,7 @@ namespace Qwips.Core.MultiCase.Orders.Orderstatus.Item {
         public async Task<Ordersstatusresponse> GetAsync(Action<WithNumbersItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Ordersstatusresponse>(requestInfo, Ordersstatusresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Ordersstatusresponse>(requestInfo, Ordersstatusresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

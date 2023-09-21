@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Images.Item;
+using Qwips.Core.ClientSdk.Multicase.Images.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Images {
+namespace Qwips.Core.ClientSdk.Multicase.Images {
     /// <summary>
     /// Builds and executes requests for operations under \images
     /// </summary>
     public class ImagesRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.images.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.images.item collection</summary>
         public WithImageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("ImageId", position);

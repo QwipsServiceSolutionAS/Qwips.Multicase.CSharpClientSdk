@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Warehouses.Item;
-using Qwips.Core.MultiCase.Warehouses.Stocklevels;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Warehouses.Item;
+using Qwips.Core.ClientSdk.Multicase.Warehouses.Stocklevels;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Warehouses {
+namespace Qwips.Core.ClientSdk.Multicase.Warehouses {
     /// <summary>
     /// Builds and executes requests for operations under \warehouses
     /// </summary>
@@ -18,7 +18,7 @@ namespace Qwips.Core.MultiCase.Warehouses {
         public StocklevelsRequestBuilder Stocklevels { get =>
             new StocklevelsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.warehouses.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.warehouses.item collection</summary>
         public WithWarehouseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("WarehouseId", position);
@@ -51,7 +51,7 @@ namespace Qwips.Core.MultiCase.Warehouses {
         public async Task<List<Warehouseresponse>> GetAsync(Action<WarehousesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Warehouseresponse>(requestInfo, Warehouseresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Warehouseresponse>(requestInfo, Warehouseresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <summary>

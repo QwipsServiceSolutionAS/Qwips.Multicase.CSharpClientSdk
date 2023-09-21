@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Orderline1 : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -72,18 +72,18 @@ namespace Qwips.Core.MultiCase.Models {
         /// <summary>The UnitPrice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Unitprice? UnitPrice { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Unitprice? UnitPrice { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Unitprice UnitPrice { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Unitprice UnitPrice { get; set; }
 #endif
         /// <summary>The Warehouse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Qwips.Core.MultiCase.Models.Warehouse? Warehouse { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Warehouse? Warehouse { get; set; }
 #nullable restore
 #else
-        public Qwips.Core.MultiCase.Models.Warehouse Warehouse { get; set; }
+        public Qwips.Core.ClientSdk.Multicase.Models.Warehouse Warehouse { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new orderline1 and sets the default values.
@@ -117,8 +117,8 @@ namespace Qwips.Core.MultiCase.Models {
                 {"OrderLineId", n => { OrderLineId = n.GetIntValue(); } },
                 {"Position", n => { Position = n.GetIntValue(); } },
                 {"Product", n => { Product = n.GetObjectValue<Product1>(Product1.CreateFromDiscriminatorValue); } },
-                {"UnitPrice", n => { UnitPrice = n.GetObjectValue<Qwips.Core.MultiCase.Models.Unitprice>(Qwips.Core.MultiCase.Models.Unitprice.CreateFromDiscriminatorValue); } },
-                {"Warehouse", n => { Warehouse = n.GetObjectValue<Qwips.Core.MultiCase.Models.Warehouse>(Qwips.Core.MultiCase.Models.Warehouse.CreateFromDiscriminatorValue); } },
+                {"UnitPrice", n => { UnitPrice = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Unitprice>(Qwips.Core.ClientSdk.Multicase.Models.Unitprice.CreateFromDiscriminatorValue); } },
+                {"Warehouse", n => { Warehouse = n.GetObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Warehouse>(Qwips.Core.ClientSdk.Multicase.Models.Warehouse.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -140,8 +140,8 @@ namespace Qwips.Core.MultiCase.Models {
             writer.WriteIntValue("OrderLineId", OrderLineId);
             writer.WriteIntValue("Position", Position);
             writer.WriteObjectValue<Product1>("Product", Product);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Unitprice>("UnitPrice", UnitPrice);
-            writer.WriteObjectValue<Qwips.Core.MultiCase.Models.Warehouse>("Warehouse", Warehouse);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Unitprice>("UnitPrice", UnitPrice);
+            writer.WriteObjectValue<Qwips.Core.ClientSdk.Multicase.Models.Warehouse>("Warehouse", Warehouse);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

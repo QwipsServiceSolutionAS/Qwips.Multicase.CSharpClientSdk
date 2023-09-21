@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
-using Qwips.Core.MultiCase.Warehouses.Stocklevels.Item;
-using Qwips.Core.MultiCase.Warehouses.Stocklevels.Search;
+using Qwips.Core.ClientSdk.Multicase.Models;
+using Qwips.Core.ClientSdk.Multicase.Warehouses.Stocklevels.Item;
+using Qwips.Core.ClientSdk.Multicase.Warehouses.Stocklevels.Search;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Warehouses.Stocklevels {
+namespace Qwips.Core.ClientSdk.Multicase.Warehouses.Stocklevels {
     /// <summary>
     /// Builds and executes requests for operations under \warehouses\stocklevels
     /// </summary>
@@ -18,7 +18,7 @@ namespace Qwips.Core.MultiCase.Warehouses.Stocklevels {
         public SearchRequestBuilder Search { get =>
             new SearchRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.warehouses.stocklevels.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.warehouses.stocklevels.item collection</summary>
         public WithProductItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("ProductId", position);
@@ -53,7 +53,7 @@ namespace Qwips.Core.MultiCase.Warehouses.Stocklevels {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Productsstocklevel>(requestInfo, Productsstocklevel.CreateFromDiscriminatorValue, default, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Productsstocklevel>(requestInfo, Productsstocklevel.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
             return collectionResult?.ToList();
         }
         /// <summary>

@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Qwips.Core.MultiCase.Models {
+namespace Qwips.Core.ClientSdk.Multicase.Models {
     public class Invoices : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The CreditNote property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Qwips.Core.MultiCase.Models.Creditnote>? CreditNote { get; set; }
+        public List<Qwips.Core.ClientSdk.Multicase.Models.Creditnote>? CreditNote { get; set; }
 #nullable restore
 #else
-        public List<Qwips.Core.MultiCase.Models.Creditnote> CreditNote { get; set; }
+        public List<Qwips.Core.ClientSdk.Multicase.Models.Creditnote> CreditNote { get; set; }
 #endif
         /// <summary>The Invoice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Qwips.Core.MultiCase.Models.Invoice>? Invoice { get; set; }
+        public List<Qwips.Core.ClientSdk.Multicase.Models.Invoice>? Invoice { get; set; }
 #nullable restore
 #else
-        public List<Qwips.Core.MultiCase.Models.Invoice> Invoice { get; set; }
+        public List<Qwips.Core.ClientSdk.Multicase.Models.Invoice> Invoice { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new Invoices and sets the default values.
@@ -42,8 +42,8 @@ namespace Qwips.Core.MultiCase.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"CreditNote", n => { CreditNote = n.GetCollectionOfObjectValues<Qwips.Core.MultiCase.Models.Creditnote>(Qwips.Core.MultiCase.Models.Creditnote.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"Invoice", n => { Invoice = n.GetCollectionOfObjectValues<Qwips.Core.MultiCase.Models.Invoice>(Qwips.Core.MultiCase.Models.Invoice.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"CreditNote", n => { CreditNote = n.GetCollectionOfObjectValues<Qwips.Core.ClientSdk.Multicase.Models.Creditnote>(Qwips.Core.ClientSdk.Multicase.Models.Creditnote.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"Invoice", n => { Invoice = n.GetCollectionOfObjectValues<Qwips.Core.ClientSdk.Multicase.Models.Invoice>(Qwips.Core.ClientSdk.Multicase.Models.Invoice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -52,8 +52,8 @@ namespace Qwips.Core.MultiCase.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Qwips.Core.MultiCase.Models.Creditnote>("CreditNote", CreditNote);
-            writer.WriteCollectionOfObjectValues<Qwips.Core.MultiCase.Models.Invoice>("Invoice", Invoice);
+            writer.WriteCollectionOfObjectValues<Qwips.Core.ClientSdk.Multicase.Models.Creditnote>("CreditNote", CreditNote);
+            writer.WriteCollectionOfObjectValues<Qwips.Core.ClientSdk.Multicase.Models.Invoice>("Invoice", Invoice);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

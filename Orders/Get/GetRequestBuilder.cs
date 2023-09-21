@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Orders.Get {
+namespace Qwips.Core.ClientSdk.Multicase.Orders.Get {
     /// <summary>
     /// Builds and executes requests for operations under \orders\get
     /// </summary>
@@ -39,7 +39,7 @@ namespace Qwips.Core.MultiCase.Orders.Get {
         public async Task<Orderresponse> GetAsync(Action<GetRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Orderresponse>(requestInfo, Orderresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Orderresponse>(requestInfo, Orderresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Gets an order

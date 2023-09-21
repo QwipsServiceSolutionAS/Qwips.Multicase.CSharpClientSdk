@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Products.Changedsince.Item;
+using Qwips.Core.ClientSdk.Multicase.Products.Changedsince.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Products.Changedsince {
+namespace Qwips.Core.ClientSdk.Multicase.Products.Changedsince {
     /// <summary>
     /// Builds and executes requests for operations under \products\changedsince
     /// </summary>
     public class ChangedsinceRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Qwips.Core.MultiCase.products.changedsince.item collection</summary>
+        /// <summary>Gets an item from the Qwips.Core.ClientSdk.Multicase.products.changedsince.item collection</summary>
         public WithTimestampItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("Timestamp", position);

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Models;
+using Qwips.Core.ClientSdk.Multicase.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Qwips.Core.MultiCase.Purchaseorders.Item {
+namespace Qwips.Core.ClientSdk.Multicase.Purchaseorders.Item {
     /// <summary>
     /// Builds and executes requests for operations under \purchaseorders\{Guid}
     /// </summary>
@@ -39,7 +39,7 @@ namespace Qwips.Core.MultiCase.Purchaseorders.Item {
         public async Task<Purchaseorderresponse> GetAsync(Action<WithGuItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Purchaseorderresponse>(requestInfo, Purchaseorderresponse.CreateFromDiscriminatorValue, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Purchaseorderresponse>(requestInfo, Purchaseorderresponse.CreateFromDiscriminatorValue, MulticaseErrorHandler.GenericErrorResponse, cancellationToken);
         }
         /// <summary>
         /// Retrieve one purchase order details by id (guid)

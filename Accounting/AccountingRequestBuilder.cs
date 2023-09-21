@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
-using Qwips.Core.MultiCase.Accounting.Bundles;
-using Qwips.Core.MultiCase.Accounting.Creditnote;
-using Qwips.Core.MultiCase.Accounting.Invoice;
-using Qwips.Core.MultiCase.Accounting.Invoices;
-using Qwips.Core.MultiCase.Accounting.Outstandingvouchers;
-using Qwips.Core.MultiCase.Accounting.Processbundle;
-using Qwips.Core.MultiCase.Accounting.Updatecustomerbalance;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Bundles;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Creditnote;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Invoice;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Invoices;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Outstandingvouchers;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Processbundle;
+using Qwips.Core.ClientSdk.Multicase.Accounting.Updatecustomerbalance;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Qwips.Core.MultiCase.Accounting {
+namespace Qwips.Core.ClientSdk.Multicase.Accounting {
     /// <summary>
     /// Builds and executes requests for operations under \accounting
     /// </summary>
